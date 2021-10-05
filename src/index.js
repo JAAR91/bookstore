@@ -7,9 +7,9 @@ import {
 import ReactDOM from 'react-dom';
 import './index.css';
 import NavBar from './components/NavBar';
-import Categories from './pages/Categories';
-import NoMatch from './pages/NoMatch';
-import BooksContainer from './pages/BooksContainer';
+import Categories from './components/Categories';
+import NoMatch from './components/NoMatch';
+import BooksContainer from './components/BooksContainer';
 
 ReactDOM.render(
   <React.StrictMode>

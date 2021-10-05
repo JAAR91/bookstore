@@ -1,6 +1,6 @@
 import React from 'react';
-import Book from '../components/Book';
-import FormContainer from '../components/FormContainer';
+import Book from './Book';
+import FormContainer from './FormContainer';
 
 const BooksContainer = () => {
   const books = [{
