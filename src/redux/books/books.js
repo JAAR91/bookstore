@@ -32,9 +32,9 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, {
-        id: state[state.length].id + 1,
+        id: action.payload.id,
         title: action.payload.title,
-        author: 'default',
+        author: action.payload.author,
         category: action.payload.category,
         progress: 'chapter 1',
         complete: '0%',
