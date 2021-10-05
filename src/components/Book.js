@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types';
 
 const Book = (props) => {
-  const { bookdata } = props;
+  const { bookdata, removeBookfromStore } = props;
   const {
-    title, author, category, progress, complete,
+    id, title, author, category, progress, complete,
   } = bookdata;
+
+  const removeClick = () => {
+    removeBookfromStore(id);
+  };
+
   return (
     <div className="row m-0 rounded border p-4 bg-white shadow my-2">
       <div className="col-4">
@@ -14,7 +19,7 @@ const Book = (props) => {
         <div className="mt-4 d-flex">
           <button type="button" className="link-info border-0 bg-transparent mx-3">Comments </button>
           <div className="border" />
-          <button type="button" className="link-info border-0 bg-transparent mx-3">Remove </button>
+          <button type="button" className="link-info border-0 bg-transparent mx-3" onClick={removeClick}>Remove </button>
           <div className="border" />
           <button type="button" className="link-info border-0 bg-transparent mx-3">Edit </button>
         </div>
@@ -36,13 +41,14 @@ const Book = (props) => {
 
 Book.propTypes = {
   bookdata: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     progress: PropTypes.string.isRequired,
     complete: PropTypes.string.isRequired,
   }).isRequired,
+  removeBookfromStore: PropTypes.func.isRequired,
 };
 
 export default Book;

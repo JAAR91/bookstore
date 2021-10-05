@@ -17,8 +17,8 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="bg-white d-flex flex-row justify-content-between px-5">
-      <ul className="d-flex flex-row align-items-center p-2 list-style-none">
+    <nav className="bg-white d-flex flex-row justify-content-around">
+      <ul className="d-flex flex-row align-items-center m-0 list-style-none">
         <li className="mx-2">
           <p className="fs-2 text-blue">
             Bookstore CMS

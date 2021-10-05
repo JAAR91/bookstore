@@ -1,29 +1,69 @@
-import Select from 'react-select';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-const FormContainer = () => {
+const FormContainer = (props) => {
   const options = [
-    { value: 'Fantasy', label: 'Fantasy' },
-    { value: 'Comedy', label: 'Comedy' },
-    { value: 'Drama', label: 'Drama' },
-    { value: 'Horror', label: 'Horror' },
-    { value: 'Mistery', label: 'Mistery' },
-    { value: 'Romance', label: 'Romance' },
-    { value: 'Thriller', label: 'Thriller' },
-    { value: 'Action', label: 'Action' },
+    { value: 'Fantasy' },
+    { value: 'Comedy' },
+    { value: 'Drama' },
+    { value: 'Horror' },
+    { value: 'Mistery' },
+    { value: 'Romance' },
+    { value: 'Thriller' },
+    { value: 'Action' },
   ];
 
+  const [inputText, setInputText] = useState({
+    title: '',
+    category: 'Fantasy',
+  });
+
+  const onChange = (e) => {
+    setInputText({
+      ...inputText,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputText.title.trim()) {
+      props.submitBookToStore(inputText);
+      setInputText({
+        title: '',
+        category: inputText.category,
+      });
+    }
+  };
+
   return (
-    <form className="row m-0">
+    <form onSubmit={handleSubmit} className="row m-0 py-3 mb-5">
       <p className="col-12 text-muted fs-4 fw-bold">ADD NEW BOOK</p>
       <div className="col-6">
-        <input className="form-control" placeholder="Book title" />
+        <input
+          className="form-control"
+          placeholder="Book title"
+          value={inputText.title}
+          onChange={onChange}
+          name="title"
+        />
       </div>
       <div className="col-3 mx-4">
-        <Select options={options} />
+        <select className="form-select" name="category" onChange={onChange}>
+          {options.map((cat) => (
+            <option key={cat.value} value={cat.value}>
+              {cat.value}
+            </option>
+          ))}
+        </select>
       </div>
-      <button type="button" className="col-2 btn btn-info text-white">ADD BOOK</button>
+      <button type="submit" className="col-2 btn btn-info text-white">ADD BOOK</button>
     </form>
   );
+};
+
+FormContainer.propTypes = {
+  submitBookToStore: PropTypes.func.isRequired,
 };
 
 export default FormContainer;
