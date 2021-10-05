@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import { openNoti } from '../redux/Notifications/Notification';
+import store from '../redux/configureStores';
 
 const FormContainer = (props) => {
   const options = [
@@ -33,6 +35,8 @@ const FormContainer = (props) => {
         title: '',
         category: inputText.category,
       });
+    } else {
+      store.dispatch(openNoti('Book title cant be empty!'));
     }
   };
 

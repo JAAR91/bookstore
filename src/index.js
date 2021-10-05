@@ -11,6 +11,9 @@ import Categories from './components/Categories';
 import NoMatch from './components/NoMatch';
 import BooksContainer from './components/BooksContainer';
 import store from './redux/configureStores';
+import Notification from './components/notification';
+
+console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
@@ -27,6 +30,7 @@ ReactDOM.render(
           <NoMatch />
         </Route>
       </Switch>
+      <Notification />
     </Router>
   </React.StrictMode>,
   document.getElementById('root'),
