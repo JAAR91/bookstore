@@ -15,6 +15,7 @@ const FormContainer = (props) => {
 
   const [inputText, setInputText] = useState({
     title: '',
+    category: 'Fantasy',
   });
 
   const onChange = (e) => {
@@ -30,6 +31,7 @@ const FormContainer = (props) => {
       props.submitBookToStore(inputText);
       setInputText({
         title: '',
+        category: inputText.category,
       });
     }
   };

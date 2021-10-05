@@ -1,22 +1,7 @@
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
-const initialState = [{
-  id: 1,
-  title: 'Lord of the Rings',
-  author: 'Novel by J. R. R. Tolkien',
-  category: 'Fantasy',
-  progress: 'chapter 2',
-  complete: '10%',
-},
-{
-  id: 2,
-  title: 'Harry Potter',
-  author: 'J. K. Rowling',
-  category: 'Fantasy',
-  progress: 'chapter 4',
-  complete: '20%',
-}];
+const initialState = [];
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
