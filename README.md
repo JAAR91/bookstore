@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+### BookStore
 
 BookStore app that allows you to track the usage of your books. App made with react and redux.
+
+## Built With
+
+- JavaScript
+- HTML & CSS
+- Bootstrap
+- Webpack
+- Jest testing framework
+- Git and Github pages
+- VSCode
+- Linter Checkers
 
 ## Available Scripts
 
