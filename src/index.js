@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
-import NavBar from './components/navBar';
+import NavBar from './components/NavBar';
 import Categories from './pages/Categories';
 import NoMatch from './pages/NoMatch';
 import BooksContainer from './pages/BooksContainer';
