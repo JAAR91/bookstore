@@ -1,0 +1,15 @@
+.titleContainer {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000000d7;
+  width: 600px;
+  margin-top: 20px;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
