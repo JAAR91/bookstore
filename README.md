@@ -2,7 +2,7 @@
 
 # BookStore
 
-BookStore app that allows you to track the usage of your books. App made with react and redux.
+BookStore app that allows you to track the usage of your books. App made with react and redux. Percentage circle code belongs to atomicnoggin, more info [here](http://circle.firchow.net/)
 
 ## Built With
 
@@ -51,6 +51,23 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## How to get your own API code:
+
+First you go to index.html and add the following code below all the imports:
+```
+import getAPIkey from './redux/books/books';
+```
+
+Now on the same file, go to the bottom and add:
+```
+store.dispatch(getAPIkey());
+```
+Now just run the project using the following code on the terminal:
+```
+npm start
+```
+The page will automatically get the API code for you and show it at the bottom of the page, you copy that code, and add it to line 7 on file redux/books/books.js
 
 ## Learn More
 
