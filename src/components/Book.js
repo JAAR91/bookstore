@@ -43,10 +43,10 @@ Book.propTypes = {
   bookdata: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
+    author: PropTypes.string,
     category: PropTypes.string.isRequired,
-    progress: PropTypes.string.isRequired,
-    complete: PropTypes.string.isRequired,
+    progress: PropTypes.string,
+    complete: PropTypes.string,
   }).isRequired,
   removeBookfromStore: PropTypes.func.isRequired,
 };

@@ -3,7 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import FormContainer from './FormContainer';
 import store from '../redux/configureStores';
-import { addBook, removeBook } from '../redux/books/books';
+import { addBook, removeBook, fetchBooks } from '../redux/books/books';
+
+store.dispatch(fetchBooks());
 
 const BooksContainer = () => {
   const [books, setbooks] = useState(store.getState());
@@ -29,9 +31,12 @@ const BooksContainer = () => {
   return (
     <>
       <div className="container px-0 py-4 border-bottom">
-        {books.booksReducer.map((book) => (
-          <div key={book.id}>
-            <Book bookdata={book} removeBookfromStore={removeBookfromStore} />
+        { Object.keys(books.booksReducer).map((key) => (
+          <div key={key}>
+            <Book
+              bookdata={{ id: key, ...books.booksReducer[key][0] }}
+              removeBookfromStore={removeBookfromStore}
+            />
           </div>
         ))}
       </div>
