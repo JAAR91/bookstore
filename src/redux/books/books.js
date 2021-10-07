@@ -4,6 +4,8 @@ const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const GET_API_KEY = 'bookStore/books/GET_API_KEY';
 const FETCH_BOOKS = 'bookStore/books/FETCH_BOOKS';
 
+const apiKey = '4CYrehtHybLPMMrg29Rc';
+
 const initialState = {};
 
 export const addBook = (payload) => ({
@@ -23,6 +25,10 @@ export const getAPIbooks = (payload) => ({
 
 export const fetchBooks = () => ({
   type: FETCH_BOOKS,
+});
+
+export const getAPIkey = () => ({
+  type: GET_API_KEY,
 });
 
 const reducer = (state = initialState, action) => {
@@ -57,7 +63,7 @@ export const fetchBooksAPI = (storeAPI) => (next) => (action) => {
         });
       break;
     case ADD_BOOK:
-      fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4CYrehtHybLPMMrg29Rc/books',
+      fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiKey}/books`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -71,7 +77,7 @@ export const fetchBooksAPI = (storeAPI) => (next) => (action) => {
         .then((response) => response.text());
       break;
     case REMOVE_BOOK:
-      fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4CYrehtHybLPMMrg29Rc/books/${action.payload.id}`,
+      fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiKey}/books/${action.payload.id}`,
         {
           method: 'DELETE',
           Header: { 'Content-Type': 'application/json' },
@@ -82,7 +88,7 @@ export const fetchBooksAPI = (storeAPI) => (next) => (action) => {
         .then((response) => response.text());
       break;
     case FETCH_BOOKS:
-      fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4CYrehtHybLPMMrg29Rc/books',
+      fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiKey}/books`,
         {
           method: 'GET',
           Header: { 'Content-Type': 'application/json' },
