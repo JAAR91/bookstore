@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Circle from './circleLoader';
 
 const Book = (props) => {
   const { bookdata, removeBookfromStore } = props;
@@ -25,6 +26,7 @@ const Book = (props) => {
         </div>
       </div>
       <div className="col-4 d-flex flex-column justify-content-center align-items-center border-end">
+        <Circle percentage={parseInt(complete, 10)} />
         <p className="fs-1">{complete}</p>
         <p className="text-muted">Completed</p>
       </div>
