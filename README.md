@@ -54,7 +54,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## How to get your own API code:
 
-First you go to index.html and add the following code below all the imports:
+First, go to index.js and add the following code below all the imports:
 ```
 import getAPIkey from './redux/books/books';
 ```
@@ -67,7 +67,7 @@ Now just run the project using the following code on the terminal:
 ```
 npm start
 ```
-The page will automatically get the API code for you and show it at the bottom of the page, you copy that code, and add it to line 7 on file redux/books/books.js
+The page will automatically get the API code for you and show it at the bottom of the page, you copy that code, and add it to line 7 on file redux/books/books.js, now delete all the changes you just made to the index.js.
 
 ## Learn More
 
