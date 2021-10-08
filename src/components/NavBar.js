@@ -17,29 +17,31 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="bg-white d-flex flex-row justify-content-around">
-      <ul className="d-flex flex-row align-items-center m-0 list-style-none">
-        <li className="mx-2">
-          <p className="fs-2 text-blue">
-            Bookstore CMS
-          </p>
-        </li>
-        {links.map((link) => (
-          <li key={link.id} className="mx-2">
-            <NavLink
-              className="link-dark text-decoration-none text-muted"
-              to={link.path}
-              exact
-            >
-              {link.text}
-            </NavLink>
+    <nav className="panel-bg">
+      <div className="nav-inner-panel d-flex flex-row justify-content-between">
+        <ul className="d-flex flex-row align-items-center m-0 list-style-none p-0">
+          <li className="mx-2">
+            <p className="Bookstore-CMS">
+              Bookstore CMS
+            </p>
           </li>
-        ))}
-      </ul>
-      <div className="p-3">
-        <button type="button" className="user-button">
-          <FaUser className="m-0" />
-        </button>
+          {links.map((link) => (
+            <li key={link.id} className="mx-2">
+              <NavLink
+                className="BOOKS text-decoration-none text-muted"
+                to={link.path}
+                exact
+              >
+                {link.text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+        <div className="p-0">
+          <button type="button" className="Oval">
+            <FaUser className="m-0" />
+          </button>
+        </div>
       </div>
     </nav>
   );

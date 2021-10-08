@@ -4,12 +4,12 @@ import './circle.css';
 const Circle = (props) => {
   const { percentage } = props;
 
-  const circleValue = `c100 center p${percentage || 0}`;
+  const circleValue = `c100 small p${percentage || 0}`;
 
   return (
-    <div className="clearfix">
+    <div className="clearfix me-3">
       <div className={circleValue}>
-        <span>
+        <span className="-Percent-Complete">
           {percentage || 0}
           %
         </span>

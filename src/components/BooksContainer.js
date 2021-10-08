@@ -30,7 +30,7 @@ const BooksContainer = () => {
 
   return (
     <>
-      <div className="container px-0 py-4 border-bottom">
+      <div className="Books-container p-0">
         { Object.keys(books.booksReducer).map((key) => (
           <div key={key}>
             <Book
@@ -39,8 +39,7 @@ const BooksContainer = () => {
             />
           </div>
         ))}
-      </div>
-      <div className="container p-0 mt-3">
+        <div className="Line-botton mx-0" />
         <FormContainer submitBookToStore={submitBookToStore} />
       </div>
     </>

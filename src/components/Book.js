@@ -12,29 +12,34 @@ const Book = (props) => {
   };
 
   return (
-    <div className="row m-0 rounded border p-4 bg-white shadow my-2">
-      <div className="col-4">
-        <p className="text-muted m-0">{category}</p>
-        <p className="fs-2 fw-bold m-0">{title}</p>
-        <p className="m-0 text-info">{author}</p>
-        <div className="mt-4 d-flex">
-          <button type="button" className="link-info border-0 bg-transparent mx-3">Comments </button>
-          <div className="border" />
-          <button type="button" className="link-info border-0 bg-transparent mx-3" onClick={removeClick}>Remove </button>
-          <div className="border" />
-          <button type="button" className="link-info border-0 bg-transparent mx-3">Edit </button>
+    <div className="Lesson-Panel row">
+      <div className="col-5">
+        <p className="School-of">{category}</p>
+        <p className="Title">{title}</p>
+        <p className="Author">{author || 'Author'}</p>
+        <div className="mt-3 d-flex p-0">
+          <button type="button" className="Book-buttons border-0 bg-transparent">Comments </button>
+          <div className="Line" />
+          <button type="button" className="Book-buttons border-0 bg-transparent" onClick={removeClick}>Remove </button>
+          <div className="Line" />
+          <button type="button" className="Book-buttons border-0 bg-transparent">Edit </button>
         </div>
       </div>
-      <div className="col-4 d-flex flex-column justify-content-center align-items-center border-end">
+      <div className="col-4 d-flex flex-row justify-content-center align-items-center border-end">
         <Circle percentage={parseInt(complete, 10)} />
-        <p className="fs-1">{complete}</p>
-        <p className="text-muted">Completed</p>
+        <div className="d-flex flex-column">
+          <p className="-Percent-Complete">
+            {complete || 0}
+            %
+          </p>
+          <p className="Completed">Completed</p>
+        </div>
       </div>
-      <div className="col-4 ps-4">
-        <p className="text-muted ms-4 my-0">CURRENT CHAPTER</p>
-        <p className="fs-4 ms-4 my-0">{progress}</p>
-        <button type="button" className="btn btn-info text-white ms-4 mt-4">
-          Update Progress
+      <div className="col-3 ps-4">
+        <p className="Current-Chapter">CURRENT CHAPTER</p>
+        <p className="Current-Lesson">{progress || 'Chapter 1'}</p>
+        <button type="button" className="Update-progress btn btn-info">
+          UPDATE PROGRESS
         </button>
       </div>
     </div>
