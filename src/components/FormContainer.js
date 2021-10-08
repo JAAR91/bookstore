@@ -37,9 +37,9 @@ const FormContainer = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="row m-0 py-3 mb-5">
-      <p className="col-12 text-muted fs-4 fw-bold">ADD NEW BOOK</p>
-      <div className="col-6">
+    <form onSubmit={handleSubmit} className="d-flex flex-wrap m-0 pb-6">
+      <p className="Form-Title col-12">ADD NEW BOOK</p>
+      <div>
         <input
           className="form-control"
           placeholder="Book title"
@@ -48,7 +48,7 @@ const FormContainer = (props) => {
           name="title"
         />
       </div>
-      <div className="col-3 mx-4">
+      <div className="">
         <select className="form-select" name="category" onChange={onChange}>
           {options.map((cat) => (
             <option key={cat.value} value={cat.value}>
@@ -57,7 +57,7 @@ const FormContainer = (props) => {
           ))}
         </select>
       </div>
-      <button type="submit" className="col-2 btn btn-info text-white">ADD BOOK</button>
+      <button type="submit" className="btn btn-info text-white add-button">ADD BOOK</button>
     </form>
   );
 };

@@ -241,7 +241,7 @@
   border-radius: 50%;
   float: left;
   margin: 0 0.1em 0.1em 0;
-  background-color: #ccc;
+  background-color: #dddddd;
 }
 
 .c100 *,
@@ -274,7 +274,7 @@
   width: 5em;
   line-height: 5em;
   font-size: 0.2em;
-  color: #ccc;
+  color: #a0a0a0;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -303,7 +303,7 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -1146,7 +1146,7 @@
 }
 
 .c100.dark {
-  background-color: #777;
+  background-color: #f0efef;
 }
 
 .c100.dark .bar,
@@ -1155,7 +1155,7 @@
 }
 
 .c100.dark > span {
-  color: #777;
+  color: #e7e7e7;
 }
 
 .c100.dark::after {
