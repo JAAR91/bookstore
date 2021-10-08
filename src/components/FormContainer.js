@@ -37,7 +37,7 @@ const FormContainer = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="d-flex flex-wrap m-0 p-0">
+    <form onSubmit={handleSubmit} className="d-flex flex-wrap m-0 pb-6">
       <p className="Form-Title col-12">ADD NEW BOOK</p>
       <div>
         <input
